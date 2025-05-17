@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { TextField } from '../TextField';
 import '../../api/movies.json';
-import { Movie } from '../../types/Movie'
+import { Movie } from '../../types/Movie';
 
 type Props = {
   onAdd: (movie: Movie) => void;
-}
+};
 
 export const NewMovie = ({ onAdd }: Props) => {
-
   const [count, setCount] = useState<number>(0);
 
   const [title, setTitle] = useState<string>('');
@@ -23,7 +22,9 @@ export const NewMovie = ({ onAdd }: Props) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!isFormValid()) return;
+    if (!isFormValid()) {
+      return;
+    }
 
     const newMovie = {
       title: title.trim(),
