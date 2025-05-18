@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { TextField } from '../TextField';
-import '../../api/movies.json';
 import { Movie } from '../../types/Movie';
 
 type Props = {
